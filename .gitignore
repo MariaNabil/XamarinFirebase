@@ -338,3 +338,6 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/offlineFirebase/offlineFirebase.Android/google-services- 2.json
+/offlineFirebase/offlineFirebase.Android/google-services- 3.json
+/offlineFirebase/offlineFirebase.Android/google-services.json

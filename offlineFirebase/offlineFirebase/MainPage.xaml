@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="offlineFirebase.MainPage">
+
+    <StackLayout>
+        <StackLayout>
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Start">
+                <Label Margin="0,0,0,10" Text="Firebase Realtime Database" FontAttributes="Bold" FontSize="Large" TextColor="Gray" HorizontalTextAlignment="Center" ></Label>
+                <Entry x:Name="txtId" Keyboard="Numeric" Placeholder="ID"></Entry>
+                <Entry x:Name="txtName" Placeholder="Enter Name"></Entry>
+                <Entry x:Name="txtAge" Keyboard="Numeric" Placeholder="Enter Age"></Entry>
+                <StackLayout  HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                    <Button x:Name="btnAdd" Text="Add" Clicked="BtnAdd_Clicked" HorizontalOptions="FillAndExpand"/>
+                    <Button x:Name="btnRetrive" Text="Retrive All" Clicked="BtnRetrive_Clicked" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                    <Button x:Name="btnUpdate"  Text="Update" Clicked="BtnUpdate_Clicked" HorizontalOptions="FillAndExpand" />
+                    <Button x:Name="btnDelete"  Text="Delete" Clicked="BtnDelete_Clicked" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+
+                <ListView x:Name="namesListview" 
+                          
+                          ItemsSource="{Binding observableCollection}" >
+                    
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                        <Label Text="{Binding Name}" TextColor="Blue" HorizontalOptions="FillAndExpand" />
+                                        <Label Text="{Binding PersonId}" TextColor="Blue" HorizontalOptions="FillAndExpand" />
+                                        <Label Text="{Binding Age}" TextColor="Blue" HorizontalOptions="FillAndExpand" />
+                                    </StackLayout>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    
+                    
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
